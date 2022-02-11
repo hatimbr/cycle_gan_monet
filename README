@@ -1,0 +1,26 @@
+## For training (train a model from scratch)
+call main.py
+--lr: learning rate (ADAM optimiser)
+--b1: beta1 (ADAM optimiser)
+--b2: beta2 (ADAM optimiser)
+--n_epoches: number of epoch for the training
+--decay_epoch: decay for learning rate scheduler
+--batch_size: batch size
+--data_dir: path to data, the dir must contain two dir "photo_jpg" and "monet_jpg"
+--tracking: flag, enable mlflow tracking
+--track_name: name of the run for mlflow tracking
+--profiling: flag, enable profiling with pytorch profiler
+--amp: flag, enable mixed precision
+
+example: 
+main.py --lr 0.0005 --b1 0.5 --b2 0.996 --n_epoches 120 --decay_epoch 20 --batch_size 8 /
+--data_dir ./datasets/monet_kaggle/ --tracking --track_name run_test --profiling  --amp
+
+
+## For evaluation (transform every photo of "photo_jpg" directory to Money style)
+--evaluation: enable evaluation
+--model_path: path to trained model "its weights"
+--data_dir: path to data, the dir must contain "photo_jpg" dir
+
+example: 
+main.py --evaluation --model_path ./model.pt --data_dir ./datasets/monet_kaggle/
