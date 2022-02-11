@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--n_epoches", type=int, default=10)
     parser.add_argument("--decay_epoch", type=int, default=20)
     parser.add_argument("--batch_size", type=int, default=8)
-    parser.add_argument("--data_dir", type=str, default='/gpfswork/rech/dwd/commun/datasets/monet_kaggle/')
+    parser.add_argument("--data_dir", type=str, default='./datasets/monet_kaggle/')
     parser.add_argument("--tracking", action='store_true')
     parser.add_argument("--profiling", action='store_true')
     parser.add_argument("--track_name", type=str, default="exp")
